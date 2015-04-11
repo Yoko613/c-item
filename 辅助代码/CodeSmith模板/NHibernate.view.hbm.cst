@@ -1,0 +1,30 @@
+<%-- ------------------------------------
+	
+  Author:chen
+  Datetime:2010-10-10
+  Decs:View Entitie Map Template
+
+------------------------------------ --%>
+
+<%@ CodeTemplate Language="C#" TargetLanguage="XML" Description="Generates a db<->class mapping file for use with NHibnate." %>
+<%@ Property Name="SourceView" Type="SchemaExplorer.ViewSchema" Category="Context" Description="View that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="Model" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Model" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="RemoveViewPrefix" Type="System.String" Default="tbl" Category="Object" Description="The prefix to remove from table names" %>
+<%@ Property Name="ForceId" Type="System.Boolean" Default="False" Category="Object" Description="Force Id for identity column" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2">
+	<class<%= ClassNameAtt(SourceView) %><%= ClassViewAtt(SourceView) %>>		
+		<% foreach(ViewColumnSchema column in SourceView.Columns) { %>
+		<property<%= PropertyNameAtt(column) %><%= PropertyTypeAtt(column) %>>
+			<column<%= ColumnNameAtt(column) %><%= ColumnLengthAtt(column) %><%= ColumnSqlTypeAtt(column) %><%= ColumnNotNullAtt(column) %>/>
+		</property>
+		<% } %>		
+	</class>
+</hibernate-mapping>
+<!-- #include file="NHibernate.view.inc" -->

@@ -1,0 +1,528 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F41473BD-A1DC-46D6-BD7B-1108E961F2FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZTSupermap</RootNamespace>
+    <AssemblyName>ZTSupermap</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Output_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SuperLegendLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Output\AxInterop.SuperLegendLib.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AxInterop.SuperMapLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\AxInterop.SuperMapLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AxInterop.SuperTopoLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\AxInterop.SuperTopoLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Interop.SuperLegendLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\Interop.SuperLegendLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.SuperMapLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\Interop.SuperMapLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.SuperTopoLib, Version=5.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\Interop.SuperTopoLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SMLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Output\SMLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="ZTCore, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\ZTCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZTDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\ZTDialog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZTGeoSys, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTGeoSys.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTReport, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\ZTReport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZTViewMap, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ZF.Main\bin\Debug\ZTViewMap.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyConfig\ConfigXML\clsField.cs" />
+    <Compile Include="soNet_TopoCheck .cs" />
+    <Compile Include="UI\frmSplitDataSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSplitDataSet.Designer.cs">
+      <DependentUpon>frmSplitDataSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTrackGeometryQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTrackGeometryQuery.Designer.cs">
+      <DependentUpon>frmTrackGeometryQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImageDTImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ImageDTImport.Designer.cs">
+      <DependentUpon>ImageDTImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PJTranslatorDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PJTranslatorDT.Designer.cs">
+      <DependentUpon>PJTranslatorDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ProjectionSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ProjectionSet.designer.cs">
+      <DependentUpon>ProjectionSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSQLQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSQLQuery.designer.cs">
+      <DependentUpon>frmSQLQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztSpatialReference.cs" />
+    <Compile Include="ztSpheroidArea.cs" />
+    <Compile Include="UI\AddDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AddDataset.Designer.cs">
+      <DependentUpon>AddDataset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AfferTranslation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\AfferTranslation.Designer.cs">
+      <DependentUpon>AfferTranslation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BatchImgCombine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\BatchImgCombine.Designer.cs">
+      <DependentUpon>BatchImgCombine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CompressSIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CompressSIT.Designer.cs">
+      <DependentUpon>CompressSIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CopyDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CopyDataset.Designer.cs">
+      <DependentUpon>CopyDataset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DatasetConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DatasetConnect.designer.cs">
+      <DependentUpon>DatasetConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DatasetProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DatasetProperty.Designer.cs">
+      <DependentUpon>DatasetProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\DataSourceProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\DataSourceProperty.Designer.cs">
+      <DependentUpon>DataSourceProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FieldModify.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FieldModify.Designer.cs">
+      <DependentUpon>FieldModify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FileDTExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FileDTExport.designer.cs">
+      <DependentUpon>FileDTExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FileDTImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FileDTImport.designer.cs">
+      <DependentUpon>FileDTImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmBuffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmBuffer.Designer.cs">
+      <DependentUpon>frmBuffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMosaic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMosaic.designer.cs">
+      <DependentUpon>frmMosaic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSetBuffer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSetBuffer.Designer.cs">
+      <DependentUpon>frmSetBuffer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmSpatialQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmSpatialQuery.Designer.cs">
+      <DependentUpon>frmSpatialQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmTextStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmTextStyle.designer.cs">
+      <DependentUpon>frmTextStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ImgBandCombine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ImgBandCombine.Designer.cs">
+      <DependentUpon>ImgBandCombine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapConnect.Designer.cs">
+      <DependentUpon>MapConnect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MapProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MapProperty.Designer.cs">
+      <DependentUpon>MapProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewDataset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewDataset.Designer.cs">
+      <DependentUpon>NewDataset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\NewDataSource.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\NewDataSource.Designer.cs">
+      <DependentUpon>NewDataSource.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OverlayAnalyst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OverlayAnalyst.Designer.cs">
+      <DependentUpon>OverlayAnalyst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\OverlayFieldSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\OverlayFieldSetting.Designer.cs">
+      <DependentUpon>OverlayFieldSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PJCoordSysDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PJCoordSysDescription.Designer.cs">
+      <DependentUpon>PJCoordSysDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PJParamsSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PJParamsSetting.Designer.cs">
+      <DependentUpon>PJParamsSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PJTranslator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PJTranslator.Designer.cs">
+      <DependentUpon>PJTranslator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtrl\PropertyMapListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtrl\PropertyMapListView.designer.cs">
+      <DependentUpon>PropertyMapListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SQLDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SQLDialog.designer.cs">
+      <DependentUpon>SQLDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RegionUnion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\RegionUnion.Designer.cs">
+      <DependentUpon>RegionUnion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ExportData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ExportData.designer.cs">
+      <DependentUpon>ExportData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCtrl\SelectFieldCtrl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserCtrl\SelectFieldCtrl.designer.cs">
+      <DependentUpon>SelectFieldCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztClip.cs" />
+    <Compile Include="ztDatasources.cs" />
+    <Compile Include="ZTGISImageIndex.cs" />
+    <Compile Include="ztStandardTF.cs" />
+    <Compile Include="ztSuperMap.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ztSuperTopo.cs" />
+    <Compile Include="ztSuperWorkspace.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AddDataset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AddDataset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\AfferTranslation.resx">
+      <DependentUpon>AfferTranslation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BatchImgCombine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BatchImgCombine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CompressSIT.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CompressSIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CopyDataset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CopyDataset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DatasetConnect.resx">
+      <DependentUpon>DatasetConnect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DatasetProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DatasetProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\DataSourceProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataSourceProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FieldModify.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FieldModify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FileDTExport.resx">
+      <DependentUpon>FileDTExport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FileDTImport.resx">
+      <DependentUpon>FileDTImport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmBuffer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmBuffer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMosaic.resx">
+      <DependentUpon>frmMosaic.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSetBuffer.resx">
+      <DependentUpon>frmSetBuffer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSpatialQuery.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmSpatialQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSplitDataSet.resx">
+      <DependentUpon>frmSplitDataSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTextStyle.resx">
+      <DependentUpon>frmTextStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmTrackGeometryQuery.resx">
+      <DependentUpon>frmTrackGeometryQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImageDTImport.resx">
+      <DependentUpon>ImageDTImport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ImgBandCombine.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImgBandCombine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapConnect.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MapConnect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MapProperty.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MapProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewDataset.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewDataset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\NewDataSource.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NewDataSource.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OverlayAnalyst.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OverlayAnalyst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\OverlayFieldSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OverlayFieldSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PJCoordSysDescription.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PJCoordSysDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PJParamsSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PJParamsSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PJTranslator.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PJTranslator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PJTranslatorDT.resx">
+      <DependentUpon>PJTranslatorDT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ProjectionSet.resx">
+      <DependentUpon>ProjectionSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmSQLQuery.resx">
+      <DependentUpon>frmSQLQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtrl\PropertyMapListView.resx">
+      <DependentUpon>PropertyMapListView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SQLDialog.resx">
+      <DependentUpon>SQLDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RegionUnion.resx">
+      <DependentUpon>RegionUnion.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ExportData.resx">
+      <DependentUpon>ExportData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserCtrl\SelectFieldCtrl.resx">
+      <DependentUpon>SelectFieldCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="说明和要求.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

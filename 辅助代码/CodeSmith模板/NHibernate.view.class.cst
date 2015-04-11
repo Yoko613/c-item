@@ -1,0 +1,93 @@
+<%-- ------------------------------------
+	
+  Author:chen
+  Datetime:2010-10-10
+  Decs:View Entitie Template
+
+------------------------------------ --%>
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="Generates a C# class for use with NHibnate" %>
+<%@ Property Name="SourceView" Type="SchemaExplorer.ViewSchema" Category="Context" Description="View that the mapping file is based on" %>
+<%@ Property Name="Namespace" Type="System.String" Default="Model" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Model" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="RemoveViewPrefix" Type="System.String" Default="tbl" Category="Object" Description="The prefix to remove from table names" %>
+<%@ Property Name="ForceId" Type="System.Boolean" Default="false" Category="Object" Description="Force Id for identity column" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+/* ------------------------------------
+	
+  Author:CodeSmith CodeTemplate
+  Datetime:<%= System.DateTime.Now.ToString("yyyy-MM-dd") %>
+  Decs: View="<%= ClassName(SourceView) %>"
+
+------------------------------------ */
+using System;
+using System.Collections;
+
+namespace <%= Namespace %>
+{
+	
+	#region <%= ClassName(SourceView) %>
+
+	/// <summary>
+	/// <%= ClassName(SourceView) %> object for NHibernate mapped view '<%= ClassView(SourceView) %>'.
+	/// </summary>
+	public class <%= ClassName(SourceView) %>
+	{
+		#region Member Variables
+		
+		<% foreach(ViewColumnSchema column in SourceView.Columns) { %>
+		protected <%= MemberType(column) %> <%= MemberName(column) %>;
+		<% } %>
+		
+		#endregion
+
+        #region Constructors
+
+		public <%= ClassName(SourceView) %>() { }
+
+		public <%= ClassName(SourceView) %>( <%
+			int count = 0;
+			foreach(ViewColumnSchema column in SourceView.Columns)
+			{
+				if (count > 0) Response.Write(", ");
+				%><%= MemberType(column) %> <%= ParameterName(column) %><%
+				count ++;
+			}
+			%> )
+		{
+		<% foreach(ViewColumnSchema column in SourceView.Columns) { %>
+			this.<%= MemberName(column) %> = <%= ParameterName(column) %>;
+		<% } %>
+		}
+
+		#endregion
+                
+		#region Public Properties
+
+		<% foreach(ViewColumnSchema column in SourceView.Columns) { %>
+		public virtual <%= MemberType(column) %> <%= PropertyName(column) %>
+		{
+			get { return <%= MemberName(column) %>; }
+			<% if (MemberType(column) == "string") {%>
+			set
+			{
+				if ( value != null && value.Length > <%= ColumnLength(column)%>)
+					throw new ArgumentOutOfRangeException("Invalid value for <%= PropertyName(column) %>", value, value.ToString());
+				<%= MemberName(column) %> = value;
+			}
+			<% } else { %>
+			set { <%= MemberName(column) %> = value; }
+			<% } %>
+		}
+
+		<% } %>
+			
+
+		#endregion
+	}
+	#endregion
+<!-- #include file="NHibernate.view.inc" -->
+}

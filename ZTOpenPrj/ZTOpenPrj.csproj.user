@@ -1,0 +1,11 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <StartAction>Project</StartAction>
+    <StartProgram>
+    </StartProgram>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <StartProgram>..\Output\ZTFrame.exe</StartProgram>
+    <StartAction>Program</StartAction>
+  </PropertyGroup>
+</Project>

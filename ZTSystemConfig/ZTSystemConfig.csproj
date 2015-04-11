@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1245A56B-178D-4797-B4F9-5804C8A2D3E7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZTSystemConfig</RootNamespace>
+    <AssemblyName>ZTSystemConfig</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Output_Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Compile Include="UI\frmLoginSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmLoginSettings.Designer.cs">
+      <DependentUpon>frmLoginSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmMapSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmMapSettings.Designer.cs">
+      <DependentUpon>frmMapSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\frmServerSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\frmServerSettings.designer.cs">
+      <DependentUpon>frmServerSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztLogInConfig.cs" />
+    <Compile Include="ztServerConfig.cs" />
+    <Compile Include="ztMapConfig.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\frmLoginSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmLoginSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmMapSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmMapSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\frmServerSettings.resx">
+      <DependentUpon>frmServerSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+    <Reference Include="ZTDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Output_Release\ZTDialog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

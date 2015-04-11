@@ -1,0 +1,298 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{323C9AAE-26FA-4075-892F-8169586B3504}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ZTViewMap</RootNamespace>
+    <AssemblyName>ZTViewMap</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Output_Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.SuperGridViewLib, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\AxInterop.SuperGridViewLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.SuperMapLib, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\AxInterop.SuperMapLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=7.8.0.8, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL" />
+    <Reference Include="Interop.SuperGridViewLib, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\Interop.SuperGridViewLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.SuperMapLib, Version=6.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\Interop.SuperMapLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ZT.DataQuery, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ZTFrame\ZT.DataQuery.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ZT.Dic, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZT.Dic.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTCore, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ztDBComm, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ztDBComm.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTDBCommInterface, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTDBCommInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="ztImageCtrl, Version=0.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ztImageCtrl.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTSupermap, Version=1.0.0.1, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="ZTSystemConfig, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTSystemConfig.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTViewInterface, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTViewInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="ZTViewReport, Version=3.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <Private>False</Private>
+      <HintPath>..\Lib\ZTFrame\ZTViewReport.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EditorManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ztAttributes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztAttributes.designer.cs">
+      <DependentUpon>ztAttributes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztBalloon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztBookmarks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztBookmarks.Designer.cs">
+      <DependentUpon>ztBookmarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztGradualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztGradualForm.designer.cs">
+      <DependentUpon>ztGradualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztLayerSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztLayerSetting.Designer.cs">
+      <DependentUpon>ztLayerSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztMapClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ztMapEnum.cs" />
+    <Compile Include="ztMapPrjSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztMapPrjSettings.Designer.cs">
+      <DependentUpon>ztMapPrjSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztMapTip.cs" />
+    <Compile Include="ztMdiChild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztMdiChild.designer.cs">
+      <DependentUpon>ztMdiChild.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztProjection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztProjection.Designer.cs">
+      <DependentUpon>ztProjection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ZTShowImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ZTShowImage.Designer.cs">
+      <DependentUpon>ZTShowImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztSQLQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztSQLQuery.designer.cs">
+      <DependentUpon>ztSQLQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ztTipSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ztTipSettings.designer.cs">
+      <DependentUpon>ztTipSettings.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztAttributes.resx">
+      <DependentUpon>ztAttributes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztBalloon.resx">
+      <DependentUpon>ztBalloon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztBookmarks.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ztBookmarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztGradualForm.resx">
+      <DependentUpon>ztGradualForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztLayerSetting.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ztLayerSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztMapPrjSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ztMapPrjSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztMdiChild.resx">
+      <DependentUpon>ztMdiChild.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztProjection.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ztProjection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ZTShowImage.resx">
+      <DependentUpon>ZTShowImage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztSQLQuery.resx">
+      <DependentUpon>ztSQLQuery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ztTipSettings.resx">
+      <DependentUpon>ztTipSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

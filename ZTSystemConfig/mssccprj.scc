@@ -1,0 +1,5 @@
+SCC = This is a Source Code Control file
+
+[ZTSystemConfig.csproj]
+SCC_Aux_Path = "\\192.168.1.200\Source"
+SCC_Project_Name = "$/ZTFrame/ZTFrame/Library/ZTSystemConfig", WHAAAAAA

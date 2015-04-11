@@ -1,0 +1,244 @@
+<%-- ------------------------------------
+	
+  Author:chen
+  Datetime:2010-10-10
+  Decs:Table Entitie && Map Generate and Export Template
+
+------------------------------------ --%>
+<%@ CodeTemplate Language="C#" TargetLanguage="C#" Description="This Template Generates C# domain objects for NHibernate" Debug="true" %>
+<%@ Property Name="ExcludedViews" Type="SchemaExplorer.ViewSchemaCollection" Optional="True" Category="Database Options" Description="A collection of tables to be excluded during generation." Filter="SourceView"%>
+<%@ Property Name="Namespace" Type="System.String" Default="Model" Category="Object" Description="The class namespace that the mapping file should use" %>
+<%@ Property Name="Assembly" Type="System.String" Default="Model" Category="Object" Description="The assembly that the class will be used in" %>
+<%@ Property Name="RemoveViewPrefix" Type="System.String" Default="tbl" Category="Object" Description="The prefix to remove from table names" %>
+<%@ Property Name="ForceId" Type="System.Boolean" Default="false" Category="Object" Description="Force Id for identity column" %>
+<%@ Assembly Name="System.Design" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Import Namespace="System.IO" %>
+<%@ Import Namespace="System.Xml" %>
+<%@ Import Namespace="System.Text" %>
+<%@ Import Namespace="System.Windows.Forms.Design" %>
+<%@ Import Namespace="System.Text.RegularExpressions" %>
+<script runat="template">
+	private DatabaseSchema _sourceDatabase;
+	private string _outputDirectory;
+    private bool _implementNotification = true;
+
+	private CodeTemplate _csharpTemplate;
+	private CodeTemplate _mappingTemplate;
+
+    [Category("Database")]
+    [Description("Database that the mapping file should be based on.")]
+    public DatabaseSchema SourceDatabase {
+        get { return _sourceDatabase; }
+        set { _sourceDatabase = value; }
+    }
+
+	[Editor(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
+	[Category("Class")]
+    [Description("The folder to save the generated class files.")]
+	public string OutputDirectory
+	{
+		get {return _outputDirectory;}
+		set {_outputDirectory= value;}
+	}
+
+	[Browsable(false)]
+	public CodeTemplate ClassTemplate
+	{
+		get
+		{
+			if (_csharpTemplate == null)
+				_csharpTemplate = CompileTemplate(CodeTemplateInfo.DirectoryName + "NHibernate.class.cst");
+
+			return _csharpTemplate;
+		}
+	}
+
+	[Browsable(false)]
+	public CodeTemplate MappingTemplate
+	{
+		get
+		{
+			if (_mappingTemplate == null)
+				_mappingTemplate = CompileTemplate(CodeTemplateInfo.DirectoryName + "NHibernate.hbm.cst");
+
+			return _mappingTemplate;
+		}
+	}
+
+	public CodeTemplate CompileTemplate(string templateName)
+	{
+		CodeTemplateCompiler compiler = new CodeTemplateCompiler(templateName);
+		compiler.Compile();
+
+		if (compiler.Errors.Count == 0)
+		{
+			return compiler.CreateInstance();
+		}
+		else
+		{
+			for (int i = 0; i < compiler.Errors.Count; i++)
+			{
+				Response.WriteLine(compiler.Errors[i].ToString());
+			}
+			return null;
+		}
+
+	}
+
+	public void Generate()
+	{
+        //View
+        if(ExcludedViews == null)
+		    ExcludedViews = new ViewSchemaCollection();
+        foreach(ViewSchema view in SourceDatabase.Views)
+        {
+            if(!ExcludedViews.Contains(view))
+            {
+                ExcludedViews.Add(view);
+            }
+        }
+        
+		foreach(ViewSchema sourceView in SourceDatabase.Views)
+		{
+			
+            if(!ExcludedViews.Contains(sourceView))
+            {
+                Response.Write(string.Format("Processing View {0} ... ", sourceView.Name));
+                
+                    
+                        try
+                        {
+                        string className = CamelCaseProperty(sourceView.Name);
+                        if (className.StartsWith(RemoveViewPrefix))
+                            className = className.Substring(RemoveViewPrefix.Length);
+        
+                        string classFileName = className;
+                        classFileName += ".cs";
+                        classFileName = Path.Combine(OutputDirectory, classFileName);
+        
+                        string mappingFileName = className + ".hbm.xml";
+                        mappingFileName = Path.Combine(OutputDirectory, mappingFileName);
+        
+                        this.ClassTemplate.SetProperty("SourceTable", sourceView);
+                        this.ClassTemplate.SetProperty("Namespace", Namespace);
+                        this.ClassTemplate.SetProperty("Assembly", Assembly);
+                        this.ClassTemplate.SetProperty("RemoveTablePrefix", RemoveViewPrefix);
+                        this.ClassTemplate.SetProperty("ForceId", ForceId);
+        
+                        this.ClassTemplate.RenderToFile(classFileName, true);
+        
+                        Response.Write(string.Format("{0} ", classFileName));
+        
+                        this.MappingTemplate.SetProperty("SourceTable", sourceView);
+                        this.MappingTemplate.SetProperty("Namespace", Namespace);
+                        this.MappingTemplate.SetProperty("Assembly", Assembly);
+                        this.MappingTemplate.SetProperty("RemoveTablePrefix", RemoveViewPrefix);
+                        this.MappingTemplate.SetProperty("ForceId", ForceId);
+        
+                        this.MappingTemplate.RenderToFile(mappingFileName, true);
+        
+                        Response.WriteLine(string.Format("{0} ", mappingFileName));
+        
+                        }
+                        catch (Exception ex)
+                        {
+                            Response.WriteLine("Error: " + ex);
+                        }
+                    
+            }
+		}
+	}
+</script>
+<script runat="template">
+private Regex cleanRegEx = new Regex(@"\s+|_|-|\.", RegexOptions.Compiled);
+private Regex cleanID = new Regex(@"(_ID|_id|_Id|\.ID|\.id|\.Id|ID|Id)", RegexOptions.Compiled);
+
+public string CleanName(string name)
+{
+	return cleanRegEx.Replace(name, "");
+}
+
+public string CamelCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToLower(output[0]) + output.Substring(1);
+}
+
+public string CamelCase1(string name)
+{
+			string output = ""; 
+            string[] outputs = name.Split('_'); 
+            foreach (string s in outputs) { 
+            	output += char.ToUpper(s[0]) + s.Substring(1).ToLower() + "_"; 
+            }
+            return output.TrimEnd('_');
+}
+public string CamelCaseProperty(string name)
+        {
+            string output = "";
+            string[] outputs = name.Split('_');
+            foreach (string s in outputs)
+            {
+                output += char.ToUpper(s[0]) + s.Substring(1).ToLower() + "_";
+            }
+            return output.TrimEnd('_');
+        }
+        
+public string CamelCaseClass(string name)
+        {
+            string output = "";
+            string[] outputs = name.Split('_');
+            foreach (string s in outputs)
+            {
+                output += char.ToUpper(s[0]) + s.Substring(1) + "_";
+            }
+            return output.TrimEnd('_');
+        }
+public string PascalCase(string name)
+{
+	string output = CleanName(name);
+	return char.ToUpper(output[0]) + output.Substring(1).ToLower();
+}
+
+public string MakePlural(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])y$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhy])$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}ies");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}s");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}es");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}s");
+
+	return name;
+}
+
+public string MakeSingle(string name)
+{
+	Regex plural1 = new Regex("(?<keep>[^aeiou])ies$");
+	Regex plural2 = new Regex("(?<keep>[aeiou]y)s$");
+	Regex plural3 = new Regex("(?<keep>[sxzh])es$");
+	Regex plural4 = new Regex("(?<keep>[^sxzhyu])s$");
+
+	if(plural1.IsMatch(name))
+		return plural1.Replace(name, "${keep}y");
+	else if(plural2.IsMatch(name))
+		return plural2.Replace(name, "${keep}");
+	else if(plural3.IsMatch(name))
+		return plural3.Replace(name, "${keep}");
+	else if(plural4.IsMatch(name))
+		return plural4.Replace(name, "${keep}");
+
+	return name;
+}
+
+</script>
+<% this.Generate();  %>

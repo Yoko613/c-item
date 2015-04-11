@@ -1,0 +1,133 @@
+<Configuration>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="A47356A5-70B0-47B1-99E0-952610DF4BFF/d:BusiModel/f:LAW_STAT.hbm.xml" caret="6315" fromTop="32" />
+      <File id="A47356A5-70B0-47B1-99E0-952610DF4BFF/d:BusiModel/f:LAW_STAT.cs" caret="2741" fromTop="0" />
+      <File id="56C70F66-7E12-48A8-A452-B26B642A2F32/d:Helper/f:FileHelper.cs" caret="2901" fromTop="33" />
+      <File id="8F18AD9D-5A0A-421A-A0B2-DBE460B53502/f:StatControl.cs" caret="3662" fromTop="23" />
+      <File id="46A7AA5A-7FCF-4690-9348-965E32FB9EB4/f:ucDkqs.cs" caret="2485" fromTop="19" />
+      <File id="D305997D-1210-4ED3-9BAF-9C93D2D3E127/f:ConfigManager.cs" caret="392" fromTop="6" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ProjectTree.cs" caret="8719" fromTop="2" />
+      <File id="D305997D-1210-4ED3-9BAF-9C93D2D3E127/f:frmSelDataset.cs" caret="5979" fromTop="22" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Class/f:CreateProject.cs" caret="11670" fromTop="0" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Class/f:StatView.cs" caret="1495" fromTop="18" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:Program.cs" caret="2893" fromTop="28" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Control/f:StatParseControl.cs" caret="40118" fromTop="13" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Class/f:StatPlug.cs" caret="8092" fromTop="18" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:MonitorService/f:StatService.cs" caret="2176" fromTop="24" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ZFJC_ProInfo.cs" caret="1747" fromTop="35" />
+      <File id="D305997D-1210-4ED3-9BAF-9C93D2D3E127/f:FileDTImport.cs" caret="21889" fromTop="0" />
+      <File id="1852B1B1-91E5-4005-941A-C9093DE15BB1/d:IBusiInfoService/f:IDkxxService.cs" caret="368" fromTop="7" />
+      <File id="F03680BF-8F4E-4691-92DD-D3A616C4DCC7/d:BusiModel/f:Lw_Dkxx.cs" caret="7191" fromTop="7" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="22195" fromTop="34" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ucPrjTree.cs" caret="111831" fromTop="18" />
+      <File id="1D82D9C1-DDDE-4D1D-AE53-9EBAB8E1135C/f:PlugCommand.cs" caret="47179" fromTop="6" />
+      <File id="1D82D9C1-DDDE-4D1D-AE53-9EBAB8E1135C/f:TaskManagerPlug.cs" caret="4068" fromTop="30" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Class/f:TaskStat.cs" caret="12277" fromTop="24" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Class/f:MultiStatistic.cs" caret="17035" fromTop="32" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:App.config" caret="5178" fromTop="12" />
+      <File id="E15AA689-56BD-4FD2-93A0-B83E205E2980/d:Class/f:ParseStat.cs" caret="1328" fromTop="17" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:MonitorService/f:TaskService.cs" caret="4891" fromTop="15" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/d:.svn/d:text-base/f:DkxxService.cs.svn-base" caret="72724" fromTop="19" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="90599" fromTop="30" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="4143" fromTop="10" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="12764" fromTop="29" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="15355" fromTop="25" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="5901" fromTop="6" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="8498" fromTop="26" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="9923" fromTop="25" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="8393" fromTop="19" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="10967" fromTop="22" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="5544" fromTop="14" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="11085" fromTop="16" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="11564" fromTop="28" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="8798" fromTop="27" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="12663" fromTop="30" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="70930" fromTop="36" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="66234" fromTop="9" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="66545" fromTop="13" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="66055" fromTop="12" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="66690" fromTop="26" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="66881" fromTop="32" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/d:Form/f:ztDataTransfer.cs" caret="5968" fromTop="12" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ucPrjTree.cs" caret="70294" fromTop="18" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ucPrjTree.cs" caret="73316" fromTop="21" />
+      <File id="4948B20F-C746-4B59-A4F6-65E4EAAFD988/f:ucPrjTree.cs" caret="2174" fromTop="18" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="14008" fromTop="0" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="15137" fromTop="22" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:App.config" caret="9090" fromTop="105" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="107948" fromTop="29" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="107948" fromTop="29" />
+      <File id="B2DCE996-9BB7-4272-B2BB-C8EC61EEF6FC/f:MainFrame.cs" caret="107948" fromTop="30" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="76612" fromTop="10" />
+      <File id="51CF7FEA-2572-4D13-B70E-3DC2B59C09E9/d:BusiInfoService/f:DkxxService.cs" caret="4143" fromTop="10" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir IsNull="False">
+    </NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="combYear" priority="0" />
+      <Item value="ComboBoxStyle`0" priority="0" />
+      <Item value="finally" priority="0" />
+      <Item value="null" priority="0" />
+      <Item value="true" priority="0" />
+      <Item value="string" priority="0" />
+      <Item value="else" priority="1" />
+      <Item value="return" priority="0" />
+      <Item value="try" priority="1" />
+      <Item value="e" priority="0" />
+      <Item value="FileHelper`0" priority="0" />
+      <Item value="session" priority="0" />
+      <Item value="lwDkxx" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:DevComponents.DotNetBar.Controls.ComboBoxEx">
+      <Item value="SelectedText" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Convert">
+      <Item value="ToInt32`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Windows.Forms.ComboBox">
+      <Item value="DropDownStyle" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Windows.Forms.ComboBoxStyle">
+      <Item value="DropDownList" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:ZTFramework.Model.Lw_Dkxx">
+      <Item value="Tbzt" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Collections.Generic.IList`1">
+      <Item value="Count" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:System.Exception">
+      <Item value="Message" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.File">
+      <Item value="Copy`0" priority="1" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@ZTFramework.Common.Helper.FileHelper">
+      <Item value="DeleteFile`0" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:NHibernate.ISession">
+      <Item value="Update`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+</Configuration>
